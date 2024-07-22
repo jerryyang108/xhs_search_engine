@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts</title>
+    <link rel="stylesheet" type= "text/css" href="/style.css">
+   
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search">
+    <button id="searchBtn">Search</button>
+    <ul>
+        <% posts.forEach(post => { %>
+            <li class="box">
+                <div class="title"> <%= post.title %></div>
+                <div>Tag: <%= post.tag %></div>
+                <div> <%= post.text %></div>
+                <div><a href="<%= post.url %>">Read more</a></div>
+            </li>
+        <% }) %>
+    </ul>
+    <div class="pagination">
+        <% if (currentPage > 1) { %>
+            <a href="/?page=<%= currentPage - 1 %>">Previous</a>
+        <% } %>
+        <span><%= currentPage %> of <%= totalPages %></span>
+        <% if (currentPage< totalPages) { %>
+            <a href="/?page=<%= currentPage + 1 %>">Next</a>
+        <% } %> 
+    </div>
+</body>
+</html>
