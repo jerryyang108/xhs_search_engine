@@ -40,10 +40,7 @@ li {
 .box .title{
     font-weight:bold;
 }
-.box:hover {
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+
 .box div {
     margin-bottom: 5px;
 }

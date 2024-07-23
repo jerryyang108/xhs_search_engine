@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+
 const fs = require('fs');
 const path = require('path');
+
 const PORT = 3000;
 
 app.set('view engine', 'ejs');
@@ -10,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     const page = parseInt(req.query.page) || 1;
-    const limit = 10;
+    const limit = 20;
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
@@ -77,6 +79,6 @@ app.get('/users', (req, res) => {
     });
 });
 
-  app.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log('server started')
-  });
+});
