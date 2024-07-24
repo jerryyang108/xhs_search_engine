@@ -6,8 +6,10 @@
    
 </head>
 <body>
-    <input type="text" id="search" placeholder="Search">
-    <button id="searchBtn">Search</button>
+    <form action="/search" method="get">
+        <input type="text" name="search" placeholder="Search...">
+        <button id="searchBtn">Search</button>
+    </form>
     <ul>
         <% posts.forEach(post => { %>
             <li class="box">

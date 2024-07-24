@@ -32,33 +32,7 @@ app.get('/', (req, res) => {
       
     });
 });
-/*
-app.get('/user/:id', (req, res) => {
-    const userId = req.params.id;
-    fs.readFile('./public/data/users.json', 'utf8', (err, usersData) => {
-      if (err) {
-        res.status(500).send('Error reading users data');
-        return;
-      }
-      const users = JSON.parse(usersData);
-      const user = users.find(u => u.id === userId);
-      if (!user) {
-        res.status(404).send('User not found');
-        return;
-      }
-  
-      fs.readFile('./posts.json', 'utf8', (err, postsData) => {
-        if (err) {
-          res.status(500).send('Error reading posts data');
-          return;
-        }
-        const posts = JSON.parse(postsData);
-        const userPosts = posts.filter(post => user.posts.includes(post.id));
-        res.render('user', { user, posts: userPosts });
-      });
-    });
-  });
-*/
+
 app.get('/users', (req, res) => {
     fs.readFile('./public/data/users.json', 'utf8', (err, usersData) => {
         try{
@@ -78,7 +52,24 @@ app.get('/users', (req, res) => {
         
     });
 });
-
+app.get ('/search' , (req,res)=>{
+  const query = req.query.search;
+  fs.readFile('./public/data/posts.json', 'utf8', (err, data) => {
+    try{
+        let posts = JSON.parse(data);
+        const searchResults = posts.filter(post => post.title.toLowerCase().includes(query.toLowerCase() 
+        || post.text.includes(query.toLowerCase())
+        || post.tags.includes(query.toLowerCase())));
+    
+        res.render('index', { 
+            posts: searchResults,
+            currentPage: 1,
+            totalPages: 1
+         });
+    } catch{
+        res.status(500).send('Error parsing posts.json');
+    }
+})})
 app.listen(PORT, () => {
     console.log('server started')
 });
