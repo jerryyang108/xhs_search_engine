@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Users post</title>
-        <link rel="stylesheet" href="/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    </head>
-    
-    <body>
-        <div class="header-container">
-            <form action="/search" method="get" class="search-form">
-                <input id="searchBox" type="text" name="search" placeholder="Search...">
-                <button id="searchBtn">Search</button>
-            </form>
-            <nav class="navbar">
-                <a href="/users" class="button">Users</a>
-                <a href="/" class="button">Posts</a>
-            </nav>
-        </div>
-        <ul>
-            <% users.forEach(user => { %>
-                <li class="box">
-                    <div class="title"> <%= user.name %></div>
-                    <div class="info"> <%= user.info %></div>
-                    <div class="tag"> 
-                        <% user.tag.forEach(tag => { %>
-                            <span class="hashtag">#<%= tag %></span>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users post</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <form action="/search" method="get" class="search-form">
+            <input id="searchBox" type="text" name="search" placeholder="Search...">
+            <button id="searchBtn">Search</button>
+        </form>
+        <nav class="navbar">
+            <a href="/users" class="button">Users</a>
+            <a href="/" class="button">Posts</a>
+        </nav>
+    </div>
+    <ul>
+        <% users.forEach(user=> { %>
+            <li class="box">
+                <div class="title">
+                    <%= user.name %>
+                </div>
+                <div class="info">
+                    <%= user.info %>
+                </div>
+                <div class="tag">
+                    <% user.tag.forEach(tag=> { %>
+                        <span class="hashtag">#<%= tag %></span>
                         <% }) %>
-                    </div>
-                    <div class="followers">
-                        <i style='font-size:16px' class='fas'>&#xf406;</i> : <%= user.follow.replace('W+', 'W+') %>
-                    </div>
-                </li>
+                </div>
+                <div class="followers">
+                    <i style='font-size:16px' class='fas'>&#xf406;</i> : <%= user.follow.replace('W+', 'W+' ) %>
+                </div>
+            </li>
             <% }) %>
-        </ul>
-    </body>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    </ul>
+</body>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
 </html>

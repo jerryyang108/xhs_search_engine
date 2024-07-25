@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Posts</title>
-    <link rel="stylesheet" type= "text/css" href="/style.css">
-   
+    <link rel="stylesheet" type="text/css" href="/style.css">
+
 </head>
+
 <body>
     <div class="header-container">
+        <img src="icon.png" alt="icon" class="navbar-icon">
         <form action="/search" method="get" class="search-form">
             <input id="searchBox" type="text" name="search" placeholder="Search...">
             <button id="searchBtn">Search</button>
         </form>
         <nav class="navbar">
-            <a href="/users" class="button">Users</a>
-            <a href="/" class="button">Posts</a>
+
+            <a id="button" href="/users" class="button">Users</a>
+            <a id="button" href="/" class="button">Posts</a>
         </nav>
     </div>
-   
+
     <div>
+        <p>Showing <%= numberOfPosts %> results</p>
         <ul>
-            <% posts.forEach(post => { %>
+            <% posts.forEach(post=> { %>
                 <li class="box">
-                    <div class="title"> <%= post.title %></div>
-                    <div>Tag: <%= post.tag %></div>
-                    <div> <%= post.text %></div>
+                    <div class="title">
+                        <%= post.title %>
+                    </div>
+                    <div>Tag: <%= post.tag %>
+                    </div>
+                    <div>
+                        <%= post.text %>
+                    </div>
                     <div><a href="<%= post.url %>">Read more</a></div>
                 </li>
-            <% }) %>
+                <% }) %>
         </ul>
 
     </div>
-    
+
     <div class="pagination">
-        <% if (currentPage > 1) { %>
+        <% if (currentPage> 1) { %>
             <a href="/?page=<%= currentPage - 1 %>">Previous</a>
-        <% } %>
-        <span><%= currentPage %> of <%= totalPages %></span>
-        <% if (currentPage< totalPages) { %>
-            <a href="/?page=<%= currentPage + 1 %>">Next</a>
-        <% } %> 
+            <% } %>
+                <span>
+                    <%= currentPage %> of <%= totalPages %>
+                </span>
+                <% if (currentPage< totalPages) { %>
+                    <a href="/?page=<%= currentPage + 1 %>">Next</a>
+                    <% } %>
     </div>
 </body>
+
 </html>
