@@ -6,20 +6,31 @@
    
 </head>
 <body>
-    <form action="/search" method="get">
-        <input type="text" name="search" placeholder="Search...">
-        <button id="searchBtn">Search</button>
-    </form>
-    <ul>
-        <% posts.forEach(post => { %>
-            <li class="box">
-                <div class="title"> <%= post.title %></div>
-                <div>Tag: <%= post.tag %></div>
-                <div> <%= post.text %></div>
-                <div><a href="<%= post.url %>">Read more</a></div>
-            </li>
-        <% }) %>
-    </ul>
+    <div class="header-container">
+        <form action="/search" method="get" class="search-form">
+            <input id="searchBox" type="text" name="search" placeholder="Search...">
+            <button id="searchBtn">Search</button>
+        </form>
+        <nav class="navbar">
+            <a href="/users" class="button">Users</a>
+            <a href="/" class="button">Posts</a>
+        </nav>
+    </div>
+   
+    <div>
+        <ul>
+            <% posts.forEach(post => { %>
+                <li class="box">
+                    <div class="title"> <%= post.title %></div>
+                    <div>Tag: <%= post.tag %></div>
+                    <div> <%= post.text %></div>
+                    <div><a href="<%= post.url %>">Read more</a></div>
+                </li>
+            <% }) %>
+        </ul>
+
+    </div>
+    
     <div class="pagination">
         <% if (currentPage > 1) { %>
             <a href="/?page=<%= currentPage - 1 %>">Previous</a>

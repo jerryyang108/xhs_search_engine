@@ -9,7 +9,7 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+33
 app.get('/', (req, res) => {
     const page = parseInt(req.query.page) || 1;
     const limit = 20;

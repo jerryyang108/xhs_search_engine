@@ -5,6 +5,14 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.header-container{
+    display:flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #3498db;
+}
+
 h1 {
     text-align: center;
     color: #444;
@@ -93,10 +101,31 @@ li {
     background-color: #2a12b2;
     color: white;
     border: none;
-    border-radius: 10   px;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+#searchBox{
+    margin: 10px 0;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 .tag{
-    color: #1DA1F2;
+    color: #0079c4;
+}
+
+.navbar{
+    background-color: #2980b9;
+    display:flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.navbar .button {
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
