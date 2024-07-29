@@ -6,11 +6,11 @@ body {
     padding: 0;
 }
 
-.header-container {
-    display: flex;
+.header-container{
+    display:flex;
     justify-content: space-around;
     padding: 10px;
-    background-color: #ffffffd6;
+    background-color: #3498db;
 }
 
 h1 {
@@ -19,7 +19,6 @@ h1 {
     margin-top: 20px;
     font-size: 2.5em;
 }
-
 ul {
     list-style-type: none;
     padding: 0;
@@ -29,13 +28,11 @@ ul {
     justify-items: center;
     margin: 20px;
 }
-
 li {
     margin: 10px;
     padding: 0;
     width: 100%;
 }
-
 .box {
     width: 100%;
     box-sizing: border-box;
@@ -48,25 +45,21 @@ li {
     white-space: normal;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.box .title {
-    font-weight: bold;
+.box .title{
+    font-weight:bold;
 }
 
 .box div {
     margin-bottom: 5px;
 }
-
 .box a {
     text-decoration: none;
     color: #3498db;
     transition: color 0.3s;
 }
-
 .box a:hover {
     color: #2980b9;
 }
-
 .pagination {
     text-align: center;
     margin: 20px 0;
@@ -82,33 +75,6 @@ li {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navbar button styling */
-#button {
-    color: white;
-
-    text-align: center;
-    text-decoration: none;
-
-    border-radius: 5px;
-    margin-left: 10px;
-    transition: background-color 0.3s ease;
-}
-
-
-.navbar .button:hover {
-    background-color: #0056b3;
-    color: white;
-}
-
-.navbar-icon {
-    height: 50px;
-    width: 150px;
-    margin-right: 10px;
-    padding: 15px;
-    justify-content: center;
-    align-items: center;
-}
-
 .pagination a:hover {
     background-color: #3498db;
     color: #fff;
@@ -121,7 +87,7 @@ li {
     border-radius: 5px;
 }
 
-#search {
+#search{
     width: 200px;
     padding: auto;
     margin: 10px 0;
@@ -129,7 +95,6 @@ li {
     border-radius: 20px;
     font-size: large;
 }
-
 #searchBtn {
     padding: 10px 20px;
     margin: 10px 0;
@@ -141,19 +106,18 @@ li {
     font-size: 20px;
 }
 
-#searchBox {
+#searchBox{
     margin: 10px 0;
     padding: 10px 20px;
     border-radius: 10px;
 }
-
-.tag {
+.tag{
     color: #0079c4;
 }
 
-.navbar {
-    background-color: #38c7b6;
-    display: flex;
+.navbar{
+    background-color: #2980b9;
+    display:flex;
     justify-content: center;
     padding: 10px 0;
 }
